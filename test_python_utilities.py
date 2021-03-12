@@ -9,12 +9,19 @@ class TestPythonUtilities(unittest.TestCase):
         result = Utilities.sum_list(data)
         self.assertEqual(result, 6)
 
-    def test_shallow_copy(self):
+    def test_shallow_copy_modify_copied(self):
         init_list = [1, 2, 3]
         copy_list = Utilities.shallow_copy(init_list)
         copy_list.append(4)
         self.assertEqual(init_list, [1, 2, 3])
         self.assertEqual(copy_list, [1, 2, 3, 4])
+
+    def test_shallow_copy_modify_init(self):
+        init_list = [1, 2, 3]
+        copy_list = Utilities.shallow_copy(init_list)
+        init_list.append(4)
+        self.assertEqual(copy_list, [1, 2, 3])
+        self.assertEqual(init_list, [1, 2, 3, 4])
 
 if __name__ == '__main__':
     unittest.main()
