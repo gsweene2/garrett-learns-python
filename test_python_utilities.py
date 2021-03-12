@@ -68,5 +68,22 @@ class TestPythonUtilities(unittest.TestCase):
         # Assert
         self.assertEqual(value, 'Not Found')
 
+
+    def test_get_key_from_map_else_return_default_ternary_key_exists(self):
+        # Arrange
+        my_map = {'a':1,'b':2,'c':3}
+        # Act
+        value = Utilities.get_key_from_map_else_return_default_ternary(my_map, 'a')
+        # Assert
+        self.assertEqual(value, 1)
+
+    def test_get_key_from_map_else_return_default_ternary_key_dne(self):
+        # Arrange
+        my_map = {'a':1,'b':2,'c':3}
+        # Act
+        value = Utilities.get_key_from_map_else_return_default_ternary(my_map, 'z')
+        # Assert
+        self.assertEqual(value, 'Not Found')
+
 if __name__ == '__main__':
     unittest.main()

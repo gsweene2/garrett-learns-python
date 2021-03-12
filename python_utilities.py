@@ -19,3 +19,7 @@ class Utilities():
     @staticmethod
     def get_key_from_map_else_return_default(my_map, key):
         return my_map.get(key, 'Not Found')
+
+    @staticmethod
+    def get_key_from_map_else_return_default_ternary(my_map, key):
+        return my_map[key] if key in my_map else 'Not Found'
