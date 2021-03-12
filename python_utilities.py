@@ -15,3 +15,7 @@ class Utilities():
     @staticmethod
     def deep_copy(my_list):
         return copy.deepcopy(my_list)
+
+    @staticmethod
+    def get_key_from_map_else_return_default(my_map, key):
+        return my_map.get(key, 'Not Found')

@@ -52,5 +52,21 @@ class TestPythonUtilities(unittest.TestCase):
         self.assertEqual(copy_list, [1, 2, 3])
         self.assertEqual(init_list, [1, 2, 3, 4])
 
+    def test_get_key_from_map_else_return_default_key_exists(self):
+        # Arrange
+        my_map = {'a':1,'b':2,'c':3}
+        # Act
+        value = Utilities.get_key_from_map_else_return_default(my_map, 'a')
+        # Assert
+        self.assertEqual(value, 1)
+
+    def test_get_key_from_map_else_return_default_key_dne(self):
+        # Arrange
+        my_map = {'a':1,'b':2,'c':3}
+        # Act
+        value = Utilities.get_key_from_map_else_return_default(my_map, 'z')
+        # Assert
+        self.assertEqual(value, 'Not Found')
+
 if __name__ == '__main__':
     unittest.main()
