@@ -105,5 +105,23 @@ class TestPythonUtilities(unittest.TestCase):
         # Assert
         self.assertEqual(value, 'Not Found')
 
+    def sort_list_ascending__should_return_sorted_list(self):
+        # Arrange
+        my_list = ['A','C','D','B','E']
+        # Act
+        sorted_list = Utilities.sort_list_ascending(my_list)
+        # Assert
+        expected = ['A','B','C','D','E']
+        self.assertEqual(sorted_list,expected)
+
+    def sort_list_descending__should_return_sorted_list(self):
+        # Arrange
+        my_list = ['A','C','D','B','E']
+        # Act
+        sorted_list = Utilities.sort_list_descending(my_list)
+        # Assert
+        expected = ['E','D','C','B','A']
+        self.assertEqual(sorted_list,expected)
+
 if __name__ == '__main__':
     unittest.main()

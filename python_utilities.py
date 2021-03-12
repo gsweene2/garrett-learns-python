@@ -23,3 +23,11 @@ class Utilities():
     @staticmethod
     def get_key_from_map_else_return_default_ternary(my_map, key):
         return my_map[key] if key in my_map else 'Not Found'
+
+    @staticmethod
+    def sort_list_ascending(my_list):
+        return sorted(my_list)
+
+    @staticmethod
+    def sort_list_descending(my_list):
+        return sorted(my_list, reverse=True)
