@@ -37,10 +37,10 @@ class TestPythonUtilities(unittest.TestCase):
         init_list = [1, 2, 3]
         # Act
         copy_list = Utilities.deep_copy(init_list)
-        init_list.append(4)
+        copy_list.append(4)
         # Assert
-        self.assertEqual(copy_list, [1, 2, 3])
-        self.assertEqual(init_list, [1, 2, 3, 4])
+        self.assertEqual(copy_list, [1, 2, 3, 4])
+        self.assertEqual(init_list, [1, 2, 3])
 
     def test_deep_copy_modify_init(self):
         # Arrange
@@ -49,9 +49,8 @@ class TestPythonUtilities(unittest.TestCase):
         copy_list = Utilities.deep_copy(init_list)
         init_list.append(4)
         # Assert
-        expected_list = [1, 2, 3, 4]
-        self.assertEqual(copy_list, expected_list)
-        self.assertEqual(init_list, expected_list)
+        self.assertEqual(copy_list, [1, 2, 3])
+        self.assertEqual(init_list, [1, 2, 3, 4])
 
 if __name__ == '__main__':
     unittest.main()
