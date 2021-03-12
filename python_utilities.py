@@ -5,3 +5,7 @@ class Utilities():
     @staticmethod
     def sum_list(my_list):
         return sum(my_list)
+
+    @staticmethod
+    def shallow_copy(my_list):
+        return list(my_list)
