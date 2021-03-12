@@ -1,3 +1,5 @@
+import copy
+
 class Utilities():
     def __init__(self):
         print('Initialized!')
@@ -9,3 +11,7 @@ class Utilities():
     @staticmethod
     def shallow_copy(my_list):
         return list(my_list)
+
+    @staticmethod
+    def deep_copy(my_list):
+        return copy.deepcopy(my_list)
