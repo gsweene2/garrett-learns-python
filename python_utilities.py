@@ -1,4 +1,5 @@
 import copy
+from collections import Counter
 
 class Utilities():
     def __init__(self):
@@ -35,3 +36,7 @@ class Utilities():
     @staticmethod
     def count_occurances_in_list(my_list, item):
         return my_list.count(item)
+    
+    @staticmethod
+    def count_occurances_of_each_item_in_list(my_list):
+        return Counter(my_list)

@@ -88,7 +88,6 @@ class TestPythonUtilities(unittest.TestCase):
         # Assert
         self.assertEqual(value, 'Not Found')
 
-
     def test_get_key_from_map_else_return_default_ternary_key_exists(self):
         # Arrange
         my_map = {'a':1,'b':2,'c':3}

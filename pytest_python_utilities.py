@@ -134,3 +134,12 @@ def test_count_occurances_in_list():
     occurances = Utilities.count_occurances_in_list(my_list, 2)
     # Assert
     assert 4 == occurances
+
+def test_count_occurances_of_each_item_in_list():
+    # Arrange
+    my_list = ['a', 'c', 'd', 'b', 'b', 'b', 'c', 'b']
+    # Act
+    occurances = Utilities.count_occurances_of_each_item_in_list(my_list)
+    # Assert
+    expected = { 'a': 1, 'b': 4, 'c': 2, 'd': 1}
+    assert expected == occurances
