@@ -31,3 +31,7 @@ class Utilities():
     @staticmethod
     def sort_list_descending(my_list):
         return sorted(my_list, reverse=True)
+    
+    @staticmethod
+    def count_occurances_in_list(my_list, item):
+        return my_list.count(item)

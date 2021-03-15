@@ -109,7 +109,7 @@ def test_get_key_from_map_else_return_default_ternary_key_dne():
     # Assert
     assert value == 'Not Found'
 
-def sort_list_ascending__should_return_sorted_list():
+def test_sort_list_ascending__should_return_sorted_list():
     # Arrange
     my_list = ['A','C','D','B','E']
     # Act
@@ -118,7 +118,7 @@ def sort_list_ascending__should_return_sorted_list():
     expected = ['A','B','C','D','E']
     assert sorted_list == expected
 
-def sort_list_descending__should_return_sorted_list():
+def test_sort_list_descending__should_return_sorted_list():
     # Arrange
     my_list = ['A','C','D','B','E']
     # Act
@@ -126,3 +126,11 @@ def sort_list_descending__should_return_sorted_list():
     # Assert
     expected = ['E','D','C','B','A']
     assert sorted_list == expected
+
+def test_count_occurances_in_list():
+    # Arrange
+    my_list = [1, 3, 4, 2, 2, 2, 4, 2]
+    # Act
+    occurances = Utilities.count_occurances_in_list(my_list, 2)
+    # Assert
+    assert 4 == occurances
