@@ -1,18 +1,14 @@
 import copy
 from collections import Counter
 
-"""
-Sum
-"""
+""" Sum """
 
 
 def sum_list(my_list):
     return sum(my_list)
 
 
-"""
-Test Sum
-"""
+""" Test Sum """
 
 
 def test_sum():
