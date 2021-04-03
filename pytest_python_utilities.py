@@ -29,9 +29,7 @@ def test_sum():
     assert result, 6
 
 
-"""
-Deep and Shallow Copy
-"""
+""" Deep and Shallow Copy """
 
 
 def shallow_copy(my_list):
@@ -42,9 +40,7 @@ def deep_copy(my_list):
     return copy.deepcopy(my_list)
 
 
-"""
-Test Deep and Shallow Copy
-"""
+""" Test Deep and Shallow Copy """
 
 
 def test_shallow_copy__modify_object_in_init_list__should_affect_copy_list():
@@ -69,9 +65,7 @@ def test_deep_copy__modify_object_in_init_list__should_not_affect_copy_list():
     assert init_list == [1, 2, 3, [1, 2, 3, 4]]
 
 
-"""
-Get key from map
-"""
+""" Get key from map """
 
 
 def get_key_from_map_else_return_default(my_map, key):
@@ -82,9 +76,7 @@ def get_key_from_map_else_return_default_ternary(my_map, key):
     return my_map[key] if key in my_map else "Not Found"
 
 
-"""
-Test Get key from map
-"""
+""" Test Get key from map """
 
 
 def test_get_key_from_map_else_return_default_key_exists():
@@ -123,9 +115,7 @@ def test_get_key_from_map_else_return_default_ternary_key_dne():
     assert value == "Not Found"
 
 
-"""
-Sorting
-"""
+""" Sorting """
 
 
 def sort_list_ascending(my_list):
@@ -140,9 +130,7 @@ def sort_dictionary_on_value(my_dict):
     return sorted(my_dict.items(), key=lambda x: x[1], reverse=True)
 
 
-"""
-Test Sorting
-"""
+""" Test Sorting """
 
 
 def test_sort_list_ascending__should_return_sorted_list():
@@ -175,9 +163,7 @@ def test_sort_dictionary_on_value():
     assert expected_list == sorted_list
 
 
-"""
-Count Occurances in List
-"""
+""" Count Occurances in List """
 
 
 def count_occurances_in_list(my_list, item):
@@ -188,9 +174,7 @@ def count_occurances_of_each_item_in_list(my_list):
     return Counter(my_list)
 
 
-"""
-Test Count Occurances in List
-"""
+""" Test Count Occurances in List """
 
 
 def test_count_occurances_in_list():
@@ -212,9 +196,7 @@ def test_count_occurances_of_each_item_in_list():
     assert expected == occurances
 
 
-"""
-Basic Comprehension
-"""
+""" Basic Comprehension """
 
 
 def string_to_list_comprehension(my_string):
@@ -222,9 +204,7 @@ def string_to_list_comprehension(my_string):
     return letter_list
 
 
-"""
-Test Basic Comprehension
-"""
+""" Test Basic Comprehension """
 
 
 def test_string_to_list_comprehension():
@@ -237,9 +217,7 @@ def test_string_to_list_comprehension():
     assert expected == result_string
 
 
-"""
-Find Substrings in list of Strings with Comprehensions
-"""
+""" Find Substrings in list of Strings with Comprehensions """
 
 
 def find_strings_that_contain_substring_in_list_comprehension(
@@ -248,9 +226,7 @@ def find_strings_that_contain_substring_in_list_comprehension(
     return [word for word in list_of_strings if substring in word.lower()]
 
 
-"""
-Test Find Substrings in list of Strings with Comprehensions
-"""
+""" Test Find Substrings in list of Strings with Comprehensions """
 
 
 def test_find_strings_that_contain_substring_in_list_comprehension():
@@ -265,15 +241,11 @@ def test_find_strings_that_contain_substring_in_list_comprehension():
     assert expected == result
 
 
-"""
-Lambda welcome message
-"""
+""" Lambda welcome message """
 
 print_welcome_lambda = lambda first, last: f"Welcome to garretts-docs, {first} {last}"
 
-"""
-Test Lambda welcome message
-"""
+""" Test Lambda welcome message """
 
 
 def test_print_welcome_lambda():
@@ -286,18 +258,14 @@ def test_print_welcome_lambda():
     assert expected == result
 
 
-"""
-Merge Dictionaries
-"""
+""" Merge Dictionaries """
 
 
 def merge_dictionaries(dict_1, dict_2):
     return {**dict_1, **dict_2}
 
 
-"""
-Test Merge Dictionaries
-"""
+""" Test Merge Dictionaries """
 
 
 def test_merge_dictionaries():
