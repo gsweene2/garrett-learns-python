@@ -141,7 +141,7 @@ def sort_list_descending(my_list):
 
 
 def sort_dictionary_on_value(my_dict):
-    return sorted(my_dict.items(), key=lambda x: x[1])
+    return sorted(my_dict.items(), key=lambda x: x[1], reverse=True)
 
 
 """
