@@ -1,32 +1,59 @@
 import copy
 from collections import Counter
 
-""" Sum """
+
+""" Basic Comprehension """
 
 
-def sum_list(my_list):
-    return sum(my_list)
+def string_to_list_comprehension(my_string):
+    letter_list = [letter for letter in my_string]
+    return letter_list
 
 
-""" Test Sum """
+""" Test Basic Comprehension """
 
 
-def test_sum():
+def test_string_to_list_comprehension():
     # Arrange
-    data = [1, 2, 3]
+    my_string = "awesome"
     # Act
-    result = sum_list(data)
+    result_string = string_to_list_comprehension(my_string)
     # Assert
-    assert result == 6
+    expected = ["a", "w", "e", "s", "o", "m", "e"]
+    assert expected == result_string
 
 
-def test_sum():
+""" Count Occurances in List """
+
+
+def count_occurances_in_list(my_list, item):
+    return my_list.count(item)
+
+
+def count_occurances_of_each_item_in_list(my_list):
+    return Counter(my_list)
+
+
+""" Test Count Occurances in List """
+
+
+def test_count_occurances_in_list():
     # Arrange
-    data = [1, 2, 3]
+    my_list = [1, 3, 4, 2, 2, 2, 4, 2]
     # Act
-    result = sum_list(data)
+    occurances = count_occurances_in_list(my_list, 2)
     # Assert
-    assert result, 6
+    assert 4 == occurances
+
+
+def test_count_occurances_of_each_item_in_list():
+    # Arrange
+    my_list = ["a", "c", "d", "b", "b", "b", "c", "b"]
+    # Act
+    occurances = count_occurances_of_each_item_in_list(my_list)
+    # Assert
+    expected = {"a": 1, "b": 4, "c": 2, "d": 1}
+    assert expected == occurances
 
 
 """ Deep and Shallow Copy """
@@ -63,6 +90,30 @@ def test_deep_copy__modify_object_in_init_list__should_not_affect_copy_list():
     # Assert
     assert copy_list == [1, 2, 3, [1, 2, 3]]
     assert init_list == [1, 2, 3, [1, 2, 3, 4]]
+
+
+""" Find Substrings in list of Strings with Comprehensions """
+
+
+def find_strings_that_contain_substring_in_list_comprehension(
+    list_of_strings, substring
+):
+    return [word for word in list_of_strings if substring in word.lower()]
+
+
+""" Test Find Substrings in list of Strings with Comprehensions """
+
+
+def test_find_strings_that_contain_substring_in_list_comprehension():
+    # Arrange
+    list_of_strings = ["Fred", "Freedy", "Reddison", "Dave", "Bob", "Red"]
+    # Act
+    result = find_strings_that_contain_substring_in_list_comprehension(
+        list_of_strings, "red"
+    )
+    # Assert
+    expected = ["Fred", "Reddison", "Red"]
+    assert expected == result
 
 
 """ Get key from map """
@@ -115,6 +166,55 @@ def test_get_key_from_map_else_return_default_ternary_key_dne():
     assert value == "Not Found"
 
 
+""" Lambda welcome message """
+
+print_welcome_lambda = lambda first, last: f"Welcome to garretts-docs, {first} {last}"
+
+""" Test Lambda welcome message """
+
+
+def test_print_welcome_lambda():
+    # Arrage
+    first, last = "Garrett", "Smith"
+    # Act
+    result = print_welcome_lambda(first, last)
+    # Assert
+    expected = "Welcome to garretts-docs, Garrett Smith"
+    assert expected == result
+
+
+""" Merge Dictionaries """
+
+
+def merge_dictionaries(dict_1, dict_2):
+    return {**dict_1, **dict_2}
+
+
+""" Test Merge Dictionaries """
+
+
+def test_merge_dictionaries():
+    # Arrage
+    older_data = {"bob": 35, "phil": 39, "katie": 30}
+    newer_data = {"phil": 41, "fred": 19}
+    # Act
+    result = merge_dictionaries(older_data, newer_data)
+    # Assert
+    expected = {"bob": 35, "phil": 41, "katie": 30, "fred": 19}
+    assert expected == result
+
+
+def test_merge_dictionaries():
+    # Arrage
+    older_data = {"phil": 41, "fred": 19}
+    newer_data = {"bob": 35, "phil": 39, "katie": 30}
+    # Act
+    result = merge_dictionaries(older_data, newer_data)
+    # Assert
+    expected = {"phil": 39, "fred": 19, "bob": 35, "katie": 30}
+    assert expected == result
+
+
 """ Sorting """
 
 
@@ -163,128 +263,29 @@ def test_sort_dictionary_on_value():
     assert expected_list == sorted_list
 
 
-""" Count Occurances in List """
+""" Sum """
 
 
-def count_occurances_in_list(my_list, item):
-    return my_list.count(item)
+def sum_list(my_list):
+    return sum(my_list)
 
 
-def count_occurances_of_each_item_in_list(my_list):
-    return Counter(my_list)
+""" Test Sum """
 
 
-""" Test Count Occurances in List """
-
-
-def test_count_occurances_in_list():
+def test_sum():
     # Arrange
-    my_list = [1, 3, 4, 2, 2, 2, 4, 2]
+    data = [1, 2, 3]
     # Act
-    occurances = count_occurances_in_list(my_list, 2)
+    result = sum_list(data)
     # Assert
-    assert 4 == occurances
+    assert result == 6
 
 
-def test_count_occurances_of_each_item_in_list():
+def test_sum():
     # Arrange
-    my_list = ["a", "c", "d", "b", "b", "b", "c", "b"]
+    data = [1, 2, 3]
     # Act
-    occurances = count_occurances_of_each_item_in_list(my_list)
+    result = sum_list(data)
     # Assert
-    expected = {"a": 1, "b": 4, "c": 2, "d": 1}
-    assert expected == occurances
-
-
-""" Basic Comprehension """
-
-
-def string_to_list_comprehension(my_string):
-    letter_list = [letter for letter in my_string]
-    return letter_list
-
-
-""" Test Basic Comprehension """
-
-
-def test_string_to_list_comprehension():
-    # Arrange
-    my_string = "awesome"
-    # Act
-    result_string = string_to_list_comprehension(my_string)
-    # Assert
-    expected = ["a", "w", "e", "s", "o", "m", "e"]
-    assert expected == result_string
-
-
-""" Find Substrings in list of Strings with Comprehensions """
-
-
-def find_strings_that_contain_substring_in_list_comprehension(
-    list_of_strings, substring
-):
-    return [word for word in list_of_strings if substring in word.lower()]
-
-
-""" Test Find Substrings in list of Strings with Comprehensions """
-
-
-def test_find_strings_that_contain_substring_in_list_comprehension():
-    # Arrange
-    list_of_strings = ["Fred", "Freedy", "Reddison", "Dave", "Bob", "Red"]
-    # Act
-    result = find_strings_that_contain_substring_in_list_comprehension(
-        list_of_strings, "red"
-    )
-    # Assert
-    expected = ["Fred", "Reddison", "Red"]
-    assert expected == result
-
-
-""" Lambda welcome message """
-
-print_welcome_lambda = lambda first, last: f"Welcome to garretts-docs, {first} {last}"
-
-""" Test Lambda welcome message """
-
-
-def test_print_welcome_lambda():
-    # Arrage
-    first, last = "Garrett", "Smith"
-    # Act
-    result = print_welcome_lambda(first, last)
-    # Assert
-    expected = "Welcome to garretts-docs, Garrett Smith"
-    assert expected == result
-
-
-""" Merge Dictionaries """
-
-
-def merge_dictionaries(dict_1, dict_2):
-    return {**dict_1, **dict_2}
-
-
-""" Test Merge Dictionaries """
-
-
-def test_merge_dictionaries():
-    # Arrage
-    older_data = {"bob": 35, "phil": 39, "katie": 30}
-    newer_data = {"phil": 41, "fred": 19}
-    # Act
-    result = merge_dictionaries(older_data, newer_data)
-    # Assert
-    expected = {"bob": 35, "phil": 41, "katie": 30, "fred": 19}
-    assert expected == result
-
-
-def test_merge_dictionaries():
-    # Arrage
-    older_data = {"phil": 41, "fred": 19}
-    newer_data = {"bob": 35, "phil": 39, "katie": 30}
-    # Act
-    result = merge_dictionaries(older_data, newer_data)
-    # Assert
-    expected = {"phil": 39, "fred": 19, "bob": 35, "katie": 30}
-    assert expected == result
+    assert result, 6
