@@ -361,3 +361,29 @@ def test_sum():
     result = sum_list(data)
     # Assert
     assert result, 6
+
+
+""" Switch """
+
+
+def switch_on_ones(num):
+    switcher = {
+        1: "One",
+        2: "Two",
+        3: "Three",
+        4: "Four",
+        5: "Five",
+        6: "Six",
+        7: "Seven",
+        8: "Eight",
+        9: "Nine",
+    }
+    return switcher.get(num)
+
+
+""" Test Switch """
+
+
+def test_switch_on_ones():
+    assert "Five" == switch_on_ones(5)
+    assert "Nine" == switch_on_ones(9)
