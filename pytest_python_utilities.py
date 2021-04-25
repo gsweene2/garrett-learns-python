@@ -392,18 +392,18 @@ def test_switch_on_ones():
 """ Strings: Get Last n characters of String """
 
 
-def get_last_4_characters(string_value, n):
+def get_last_n_characters(string_value, n):
     return string_value[len(string_value) - n : len(string_value)]
 
 
 """ Test Strings: Get Last n characters of String """
 
 
-def test_get_last_4_characters():
+def test_get_last_n_characters():
     # Arrange
     string_value = "alliwantforchristmasisyou"
     n = 4
     # Act
-    result = get_last_4_characters(string_value, n)
+    result = get_last_n_characters(string_value, n)
     # Assert
     assert "syou" == result
